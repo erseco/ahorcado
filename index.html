@@ -24,15 +24,29 @@
 
 </head>
 <body>
+    <div class="wrapper">
     <div class="container">
         <h1 class="text-center">Juego del Ahorcado</h1>
-        <div id="wordDisplay" class="d-flex justify-content-center"></div>
-        <canvas id="hangmanCanvas" width="200" height="250" class="mx-auto d-block"></canvas>
-        <div class="d-flex justify-content-center">
-            <input type="text" id="letterInput" class="form-control" maxlength="1">
-            <button id="guessButton" class="btn btn-primary">Enviar</button>
+        <div id="gameContainer" style="display: none;">
+            <div id="wordDisplay" class="d-flex justify-content-center"></div>
+            <canvas id="hangmanCanvas" width="200" height="250" class="mx-auto d-block"></canvas>
+            <div class="d-flex justify-content-center">
+                <input type="text" id="letterInput" class="form-control" maxlength="1">
+                <button id="guessButton" class="btn btn-primary">Enviar</button>
+            </div>
+            <p id="resultMessage" class="text-center"></p>
         </div>
-        <p id="resultMessage" class="text-center"></p>
+        <div id="enterWordContainer" class="text-center mt-5">
+            <input type="text" id="enterWord" placeholder="Introducir palabra" class="form-control" style="display: inline-block; width: auto;">
+            <button id="submitWord" class="btn btn-primary mt-2">Enviar</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="text-center">
+        <small class="copyright">Designed with&nbsp;❤️&nbsp;from a remote island  <a href="https://github.com/erseco/ahorcado">(source code)</a></small><br />
+        <small class="copyright">2023 © Ernesto Serrano</small>
+        </div>
+    </footer>
     </div>
     <script src="script.js"></script>
 </body>

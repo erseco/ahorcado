@@ -38,3 +38,26 @@ input[type="text"] {
     margin-top: 20px;
 }
 
+.usedLetters {
+    text-align: center;
+}
+
+/*html, body {
+    height: 100%;
+    margin: 0;
+}*/
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+/*    background-color: #f8f9fa; /* Puedes cambiar el color de fondo del footer aquí */*/
+    padding: 1rem;
+}
