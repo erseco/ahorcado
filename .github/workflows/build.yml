@@ -14,6 +14,12 @@ jobs:
       - name: GitHub Checkout
         uses: actions/checkout@v3
 
+      - name: Add js version to avoid cache
+        run: |
+          TIMESTAMP=$(date +%s)
+          JS_VERSION="?v=$TIMESTAMP"
+          sed -i "s|script.js|script.js$JS_VERSION|g" index.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
