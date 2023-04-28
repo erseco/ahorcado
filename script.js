@@ -16,6 +16,13 @@ var word = urlParams.get("palabra");
 
 if (word) {
 
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Dark mode is enabled
+    // Set background color to white
+    ctx.fillStyle = "#FFFFFF";
+  }
+
+
   word = window.atob(word).toUpperCase();
 
   document.getElementById("enterWordContainer").style.display = "none";
