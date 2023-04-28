@@ -16,7 +16,7 @@ var word = urlParams.get("palabra");
 
 if (word) {
 
-  word = word.toUpperCase();
+  word = window.atob(word).toUpperCase();
 
   document.getElementById("enterWordContainer").style.display = "none";
   document.getElementById("gameContainer").style.display = "block";
@@ -121,7 +121,7 @@ if (word) {
 document.getElementById("submitWord").addEventListener("click", (event) => {
   const enterWord = document.getElementById("enterWord").value.trim();
   if (enterWord) {
-      window.location.href = window.location.pathname + "?palabra=" + encodeURIComponent(enterWord);
+      window.location.href = window.location.pathname + "?palabra=" + encodeURIComponent(window.btoa(enterWord));
   }
 });
 
@@ -130,7 +130,7 @@ document.getElementById("enterWord").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
         const enterWord = document.getElementById("enterWord").value.trim();
         if (enterWord) {
-            window.location.href = window.location.pathname + "?palabra=" + encodeURIComponent(enterWord);
+            window.location.href = window.location.pathname + "?palabra=" + encodeURIComponent(window.btoa(enterWord));
         }
     }
 });
