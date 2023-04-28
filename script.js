@@ -103,7 +103,7 @@ if (word) {
         }
 
         if (correctGuesses === wordLength) {
-          resultMessage.innerText = '¡Has ganado!';
+          resultMessage.innerHTML = '<br />¡Has ganado! <a href="index.html">Jugar de nuevo</>';
           guessButton.disabled = true;
         }
       } else {
@@ -111,7 +111,7 @@ if (word) {
         currentGuesses++;
 
         if (currentGuesses === maxGuesses) {
-          resultMessage.innerText = 'Has perdido';
+          resultMessage.innerHTML = '<br />Has perdido <a href="index.html">Jugar de nuevo</>';
           guessButton.disabled = true;
         }
       }
@@ -119,6 +119,15 @@ if (word) {
   }
 
   guessButton.addEventListener('click', checkLetter);
+  letterInput.addEventListener('keyup', (event) => {
+    if (event.key === "Enter") {
+      checkLetter();
+    }
+  });
+
+
+
+  
   init();
 
 }
